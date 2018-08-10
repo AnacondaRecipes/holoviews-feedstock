@@ -10,15 +10,15 @@ source:
   sha256: 4d1753ae27486e324e2ee5d6a239bf8cc4a9acafecc0e38cb60a476bd7b4abc9
 
 build:
-  noarch: python
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  noarch: {{ noarch_python }}
+  number: 1
+  script: {{ PYTHON }} setup.py install --old-and-unmanageable --record=record.txt
 
 
 requirements:
   host:
     - python
-    - pip
+    - setuptools
     - param >=1.6.1,<2.0
   run:
     - python
