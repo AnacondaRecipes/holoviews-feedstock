@@ -9,7 +9,7 @@ source:
   sha256: c3de3c9af9a123ac3591aca781d2ccba3fb3688462e0a50ab74a11aecc05b45e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - pip
     - pyct
     - param >=1.6.1,<2.0
   run:
-    - python
+    - python >=2.7
     - param >=1.9.3,<2.0
     - panel >=0.8.0
     - numpy >=1.0
@@ -38,7 +38,7 @@ test:
   imports:
     - holoviews
   commands:
-    - pip check
+    # - pip check
     - holoviews -h
   requires:
     - pip
