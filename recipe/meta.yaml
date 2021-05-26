@@ -21,13 +21,15 @@ requirements:
     - pip
     - pyct
     - param >=1.6.1,<2.0
+    - setuptools
+    - wheel
   run:
     - python >=2.7
     - param >=1.9.3,<2.0
-    - panel >=0.8.0
+    - panel >=0.9.5
     - numpy >=1.0
     - pandas >=0.20.0
-    - matplotlib-base >=2.2
+    - matplotlib-base >=3
     - bokeh >=1.1.0
     - notebook
     - colorcet
@@ -44,7 +46,7 @@ test:
     - pip
 
 about:
-  home: www.holoviews.org
+  home: https://holoviews.org
   summary: Stop plotting your data - annotate your data and let it visualize itself.
   description: |
     HoloViews is an open-source Python library designed to make data analysis
@@ -52,6 +54,7 @@ about:
     express what you want to do in very few lines of code, letting you focus on
     what you are trying to explore and convey, not on the process of plotting.
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
   dev_url: https://github.com/ioam/holoviews
   doc_url: http://holoviews.org/getting_started/index.html
