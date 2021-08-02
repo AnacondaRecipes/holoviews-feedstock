@@ -19,9 +19,9 @@ requirements:
   host:
     - python >=2.7
     - pip
-    - pyct
-    - param >=1.6.1,<2.0
-    - setuptools
+    - pyct >=0.4.4
+    - param >=1.7.0
+    - setuptools >=30.3.0
     - wheel
   run:
     - python >=2.7
@@ -40,7 +40,7 @@ test:
   imports:
     - holoviews
   commands:
-    # - pip check
+    - pip check
     - holoviews -h
   requires:
     - pip
