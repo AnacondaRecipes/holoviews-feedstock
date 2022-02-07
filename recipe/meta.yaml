@@ -1,15 +1,16 @@
+{% set name = "holoviews" %}
 {% set version = "1.14.7" %}
 
 package:
-  name: holoviews
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/holoviews/holoviews-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/holoviews-{{ version }}.tar.gz
   sha256: 8d8d171227e9c9eaadd4b037b3ddaa01055a33bacbdbeb57a5efbd273986665f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -17,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python >=2.7
+    - python
     - pip
     - pyct >=0.4.4
     - param >=1.7.0
@@ -25,25 +26,27 @@ requirements:
     - wheel
   run:
     - python >=2.7
-    - param >=1.9.3,<2.0
-    - panel >=0.9.5
-    - numpy >=1.0
-    - pandas >=0.20.0
-    - matplotlib-base >=3
-    - bokeh >=1.1.0
-    - notebook
     - colorcet
-    - ipython >=5.4.0
+    - numpy >=1.0
+    - panel >=0.8.0
+    - pandas >=0.20.0
+    - param >=1.9.3,<2.0
     - pyviz_comms >=0.7.4
+    # Notebook dependencies
+    - ipython >=5.4.0
+    - notebook
+    # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
+    - bokeh >=1.1.0
+    - matplotlib-base >=3
 
 test:
   imports:
     - holoviews
+  requires:
+    - pip
   commands:
     - pip check
     - holoviews -h
-  requires:
-    - pip
 
 about:
   home: https://holoviews.org
@@ -57,7 +60,7 @@ about:
   license_family: BSD
   license_file: LICENSE.txt
   dev_url: https://github.com/ioam/holoviews
-  doc_url: http://holoviews.org/getting_started/index.html
+  doc_url: https://holoviews.org/getting_started/index.html
 
 extra:
   recipe-maintainers:
