@@ -20,8 +20,10 @@ requirements:
   host:
     - python
     - pip
-    - pyct
-    - param >=1.6.1,<2.0
+    - pyct >=0.4.4
+    - param >=1.7.0
+    - setuptools >=30.3.0
+    - wheel
   run:
     - python >=2.7
     - colorcet
@@ -31,11 +33,11 @@ requirements:
     - param >=1.9.3,<2.0
     - pyviz_comms >=0.7.4
     # Notebook dependencies
-    #- ipython >=5.4.0
-    #- notebook
+    - ipython >=5.4.0
+    - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
-    #- bokeh >=1.1.0
-    #- matplotlib-base >=3
+    - bokeh >=1.1.0
+    - matplotlib-base >=3
 
 test:
   imports:
