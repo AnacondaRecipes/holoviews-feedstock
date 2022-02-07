@@ -36,8 +36,8 @@ requirements:
     - ipython >=5.4.0
     - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
-    - bokeh >=1.1.0
-    - matplotlib-base >=3
+    #- bokeh >=1.1.0
+    #- matplotlib-base >=3
 
 test:
   imports:
