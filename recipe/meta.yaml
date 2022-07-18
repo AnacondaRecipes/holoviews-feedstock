@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   # We cannot build a recent version of panel due to missing nodejs on s390x
-  skip: True  # [s390x]
+  skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - holoviews = holoviews.util.command:main
@@ -26,7 +26,7 @@ requirements:
     - setuptools >=30.3.0
     - wheel
   run:
-    - python >=2.7
+    - python
     - colorcet
     - numpy >=1.0
     - panel >=0.13.1
