@@ -11,7 +11,6 @@ source:
 
 build:
   number: 0
-  # trigger: 1
   # We cannot build a recent version of panel due to missing nodejs on s390x
   skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -22,14 +21,15 @@ requirements:
   host:
     - python
     - pip
-    - pyct >=0.4.4
-    - param >=1.9.3
-    - setuptools >=30.3.0
+    - pyct
+    - param <2.0
+    - setuptools
     - wheel
   run:
     - python
     - colorcet
     - numpy >=1.0
+    - packaging
     - panel >=0.13.1
     - pandas >=0.20.0
     - param >=1.9.3,<2.0
@@ -38,7 +38,7 @@ requirements:
     - ipython >=5.4.0
     - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
-    - bokeh >=2.4.3
+    - bokeh >=2.4.3,<3.0
     - matplotlib-base >=3
 
 test:
