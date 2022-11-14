@@ -38,6 +38,7 @@ requirements:
     - ipython >=5.4.0
     - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
+    # It seems it seems holoviews isn't compatible with bokeh >=3.0.0
     - bokeh >=2.4.3,<3.0
     - matplotlib-base >=3
 
@@ -61,7 +62,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  dev_url: https://github.com/ioam/holoviews
+  dev_url: https://github.com/holoviz/holoviews
   doc_url: https://holoviews.org/getting_started/index.html
 
 extra:
