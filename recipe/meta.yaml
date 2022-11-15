@@ -1,5 +1,5 @@
 {% set name = "holoviews" %}
-{% set version = "1.15.0" %}
+{% set version = "1.15.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/holoviews-{{ version }}.tar.gz
-  sha256: 312e60d24406c3a7aec46261836b38dba2585e366bccb45e47479504805eb5ba
+  sha256: dec2417f654008b1d7b645b31ecf621c8bef901694e4c4e7272effd18afa36db
 
 build:
-  number: 1
+  number: 0
   # We cannot build a recent version of panel due to missing nodejs on s390x
   skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -29,6 +29,7 @@ requirements:
     - python
     - colorcet
     - numpy >=1.0
+    - packaging
     - panel >=0.13.1
     - pandas >=0.20.0
     - param >=1.9.3,<2.0
@@ -37,8 +38,8 @@ requirements:
     - ipython >=5.4.0
     - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
-    # bokeh >=3.0.0 has breaking changes 
-    - bokeh >=2.4.3,<2.5.0
+    # It seems holoviews isn't compatible with bokeh >=3.0.0
+    - bokeh >=2.4.3,<3.0
     - matplotlib-base >=3
 
 test:
@@ -61,7 +62,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  dev_url: https://github.com/ioam/holoviews
+  dev_url: https://github.com/holoviz/holoviews
   doc_url: https://holoviews.org/getting_started/index.html
 
 extra:
