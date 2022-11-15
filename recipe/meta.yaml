@@ -10,8 +10,7 @@ source:
   sha256: 312e60d24406c3a7aec46261836b38dba2585e366bccb45e47479504805eb5ba
 
 build:
-  number: 0
-  # trigger: 1
+  number: 1
   # We cannot build a recent version of panel due to missing nodejs on s390x
   skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -22,9 +21,9 @@ requirements:
   host:
     - python
     - pip
-    - pyct >=0.4.4
-    - param >=1.9.3
-    - setuptools >=30.3.0
+    - pyct
+    - param
+    - setuptools
     - wheel
   run:
     - python
@@ -38,7 +37,8 @@ requirements:
     - ipython >=5.4.0
     - notebook
     # Recommended dependencies: IPython Notebook + pandas + matplotlib + bokeh
-    - bokeh >=2.4.3
+    # bokeh >=3.0.0 has breaking changes 
+    - bokeh >=2.4.3,<2.5.0
     - matplotlib-base >=3
 
 test:
