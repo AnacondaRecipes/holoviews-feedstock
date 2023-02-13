@@ -22,7 +22,7 @@ requirements:
     - python
     - pip
     - pyct
-    - param 1.8.2
+    - param 1.9.3
     - setuptools
     - wheel
   run:
