@@ -22,8 +22,8 @@ requirements:
   host:
     - python
     - pip
-    - pyct 0.4.8
-    - param 1.13.0
+    - pyct
+    - param
     - setuptools
     - wheel
   run:
@@ -67,3 +67,4 @@ extra:
     - basnijholt
   skip-lints:
     - python_build_tool_in_run
+    - host_section_needs_exact_pinnings
