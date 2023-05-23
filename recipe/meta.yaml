@@ -13,15 +13,16 @@ build:
   number: 0
   # We cannot build a recent version of panel due to missing nodejs and panel on s390x
   skip: True  # [py<37 or s390x]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - holoviews = holoviews.util.command:main
+  script:
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
     - pip
-    - pyct
+    - pyct 0.4.8
     - param 1.13.0
     - setuptools
     - wheel
@@ -64,3 +65,5 @@ extra:
     - jlstevens
     - philippjfr
     - basnijholt
+  skip-lints:
+    - python_build_tool_in_run
