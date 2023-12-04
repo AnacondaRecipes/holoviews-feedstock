@@ -25,7 +25,7 @@ requirements:
     - setuptools
     - wheel
     - pyct 0.5.0
-    - param 2.0.0
+    - param 2.0
   run:
     - python
     - colorcet
