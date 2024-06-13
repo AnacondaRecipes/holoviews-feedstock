@@ -25,7 +25,7 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
-    - python >=3.9
+    - python
     - bokeh >=3.1
     - colorcet
     - matplotlib-base >=3.0
