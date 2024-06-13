@@ -35,6 +35,8 @@ requirements:
     - panel >=1.0
     - param >=2.0,<3.0
     - pyviz_comms >=2.1
+  run_constrained:
+    - plotly >=4.0
 
 test:
   imports:
