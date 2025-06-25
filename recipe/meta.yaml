@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   # We cannot build a recent version of panel due to missing nodejs and panel on s390x
-  skip: True  # [py<310 or s390x]
+  skip: True  # [py<310]
   entry_points:
     - holoviews = holoviews.util.command:main
   script:
