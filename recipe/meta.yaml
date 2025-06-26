@@ -1,5 +1,5 @@
 {% set name = "holoviews" %}
-{% set version = "1.20.2" %}
+{% set version = "1.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8c78b798601ce3af31523667c6d1cb40df8d781249ebebbdb2c5f6143565e6d8
+  sha256: 837885ab2fa376677f21dae0b2a2aeb94ba6db96e9fcb3824cdb899538ee5032
 
 build:
   number: 0
   # We cannot build a recent version of panel due to missing nodejs and panel on s390x
-  skip: True  # [py<39 or s390x]
+  skip: True  # [py<310]
   entry_points:
     - holoviews = holoviews.util.command:main
   script:
