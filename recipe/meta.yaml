@@ -1,18 +1,18 @@
 {% set name = "holoviews" %}
-{% set version = "1.21.0" %}
+{% set version = "1.22.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 837885ab2fa376677f21dae0b2a2aeb94ba6db96e9fcb3824cdb899538ee5032
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 2bd3eb5ef5062b893a56c4c42077a3ed92314a92f378d2bc77c75e017b86edba
 
 build:
   number: 0
   # We cannot build a recent version of panel due to missing nodejs and panel on s390x
-  skip: True  # [py<310]
+  skip: true  # [py<310]
   entry_points:
     - holoviews = holoviews.util.command:main
   script:
@@ -35,8 +35,11 @@ requirements:
     - panel >=1.0
     - param >=2.0,<3.0
     - pyviz_comms >=2.1
+    - narwhals >=2
+    - python-dateutil >=2.8.2
   run_constrained:
     - plotly >=4.0
+    - matplotlib-base >=3
 
 test:
   imports:
