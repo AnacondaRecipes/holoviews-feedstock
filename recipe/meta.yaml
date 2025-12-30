@@ -10,7 +10,7 @@ source:
   sha256: 2bd3eb5ef5062b893a56c4c42077a3ed92314a92f378d2bc77c75e017b86edba
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   entry_points:
     - holoviews = holoviews.util.command:main
