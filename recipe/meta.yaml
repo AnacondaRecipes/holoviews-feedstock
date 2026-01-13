@@ -36,10 +36,8 @@ requirements:
     - narwhals >=2
     - python-dateutil >=2.8.2
     - matplotlib-base >=3
-    - pyviz-comms >=2.1
   run_constrained:
     - plotly >=4.0
-    - matplotlib-base >=3
 
 test:
   imports:
