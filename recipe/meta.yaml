@@ -12,6 +12,11 @@ source:
 build:
   number: 0
   script:
+    # No testing in narwhals package
+    # >   from narwhals.testing import assert_series_equal
+    # E   ModuleNotFoundError: No module named 'narwhals.testing'
+    - rm -f holoviews/tests/core/data/test_narwhalsinterface.py  # [unix]
+    - if exist holoviews\tests\core\data\test_narwhalsinterface.py del holoviews\tests\core\data\test_narwhalsinterface.py  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - holoviews = holoviews.util.command:main
@@ -60,7 +65,6 @@ test:
     - pytest
     - pytest-asyncio
     - scipy
-    - narwhals
 
 about:
   home: https://holoviews.org
