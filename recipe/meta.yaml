@@ -60,6 +60,7 @@ test:
     - pytest
     - pytest-asyncio
     - scipy
+    - narwhals
 
 about:
   home: https://holoviews.org
