@@ -1,5 +1,5 @@
 {% set name = "holoviews" %}
-{% set version = "1.23.0" %}
+{% set version = "1.23.1" %}
 
 package:
   name: {{ name }}
@@ -7,17 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aba47038d488f510f6a99f0186649ffaab7f290a995cee8afcc768d84f729583
+  sha256: 97877ee2fcf7bf38ce63f49b731dba75d9b2fcfaf093ca51bd229770a4273cc0
 
 build:
   number: 0
-  script:
-    # No testing in narwhals package
-    # >   from narwhals.testing import assert_series_equal
-    # E   ModuleNotFoundError: No module named 'narwhals.testing'
-    - rm -f holoviews/tests/core/data/test_narwhalsinterface.py  # [unix]
-    - if exist holoviews\tests\core\data\test_narwhalsinterface.py del holoviews\tests\core\data\test_narwhalsinterface.py  # [win]
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - holoviews = holoviews.util.command:main
   skip: true  # [py<310]
@@ -40,7 +34,7 @@ requirements:
     - python-dateutil >=2.8.2
     - pyviz_comms >=2.1
     # optional but recommended
-    - matplotlib >=3
+    - matplotlib-base >=3 # base version to not pull qt
   run_constrained:
     - plotly >=4.0
 
