@@ -74,7 +74,7 @@ about:
   license_family: BSD
   license_file: LICENSE.txt
   dev_url: https://github.com/holoviz/holoviews
-  doc_url: https://holoviews.org/getting_started/index.html
+  doc_url: https://holoviews.org
 
 extra:
   recipe-maintainers:
