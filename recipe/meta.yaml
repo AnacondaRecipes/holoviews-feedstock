@@ -1,15 +1,13 @@
 {% set name = "holoviews" %}
-{% set version = "1.23.2" %}
-{% set deselect_tests = " --deselect=util/test_transform.py::TestDimTransforms::test_var_transform" %}
+{% set version = "1.23.1" %}
 
-# Skip unstable test
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0c511e6d4db4f370f2550d363c23b70d7ee4f2310f1c7995b0f89cacf1eb107
+  sha256: 97877ee2fcf7bf38ce63f49b731dba75d9b2fcfaf093ca51bd229770a4273cc0
 
 build:
   number: 0
@@ -36,11 +34,12 @@ requirements:
     - python-dateutil >=2.8.2
     - pyviz_comms >=2.1
     # optional but recommended
-    - matplotlib-base >=3  # base version to not pull qt
+    - matplotlib-base >=3 # base version to not pull qt
   run_constrained:
     - plotly >=4.0
-    - matplotlib-base >=3
 
+# Skip unstable test 
+{% set deselect_tests = " --deselect=util/test_transform.py::TestDimTransforms::test_var_transform" %}
 test:
   imports:
     - holoviews
